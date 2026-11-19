@@ -2,7 +2,7 @@ FROM maven:3.9.6 AS build
 WORKDIR /app
 COPY pom.xml .
 COPY src ./src
-RUN mvm clean package -DskipTests
+RUN mvn clean package -DskipTests
 
 
 FROM eclipse-temurin:17-jre-alpine
